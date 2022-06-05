@@ -1,0 +1,51 @@
+<script>
+var h;
+class Link
+{
+	constructor(x)
+	{
+		this.n = x;
+		this.nxt = null;
+	}
+}
+function insert(new_x)
+{
+		var link1 = new Link(new_x);
+	h = link1;
+}
+function AddNode(new_x)
+{
+	var link1 = new Link(new_x);
+	if (h == null)
+	{
+		h = new Link(new_x);
+		return;
+	}
+		link1.nxt = null;
+		var end = h;
+	while (end.nxt != null)
+		end = end.nxt;
+	end.nxt = link1;
+	return;
+}
+function listprint()
+{
+	var t = h;
+	while (t != null)
+	{
+		document.write(t.n + " ");
+		t = t.nxt;
+	}
+}
+AddNode(1);
+insert(2);
+insert(3);
+insert(4);
+AddNode(5);
+AddNode(6);
+AddNode(7);
+AddNode(8);
+
+document.write("Linked list insertion is: ");
+listprint();
+</script>
